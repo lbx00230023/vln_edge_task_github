@@ -1,0 +1,47 @@
+Collecting git+https://github.com/naokiyokoyama/frontier_exploration.git
+  Cloning https://github.com/naokiyokoyama/frontier_exploration.git to /tmp/pip-req-build-kkz02qin
+  Running command git clone --filter=blob:none --quiet https://github.com/naokiyokoyama/frontier_exploration.git /tmp/pip-req-build-kkz02qin
+  Resolved https://github.com/naokiyokoyama/frontier_exploration.git to commit 8523aa857e4b81d15e14a506fe94a77d5f2e7d5d
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting git+https://github.com/naokiyokoyama/depth_camera_filtering.git
+  Cloning https://github.com/naokiyokoyama/depth_camera_filtering.git to /tmp/pip-req-build-snli_gv7
+  Running command git clone --filter=blob:none --quiet https://github.com/naokiyokoyama/depth_camera_filtering.git /tmp/pip-req-build-snli_gv7
+  Resolved https://github.com/naokiyokoyama/depth_camera_filtering.git to commit 39d6e2f391c8b2198a67ad96f94bf6da0acd48a0
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting git+https://github.com/ChaoningZhang/MobileSAM.git
+  Cloning https://github.com/ChaoningZhang/MobileSAM.git to /tmp/pip-req-build-rx93d18d
+  Running command git clone --filter=blob:none --quiet https://github.com/ChaoningZhang/MobileSAM.git /tmp/pip-req-build-rx93d18d
+  Resolved https://github.com/ChaoningZhang/MobileSAM.git to commit f706ad9c4eb7f219c00d9050e46328518ffb65d2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: frontier_exploration, depth_camera_filtering, mobile_sam
+  Building wheel for frontier_exploration (pyproject.toml): started
+  Building wheel for frontier_exploration (pyproject.toml): finished with status 'done'
+  Created wheel for frontier_exploration: filename=frontier_exploration-0.1-py3-none-any.whl size=31200 sha256=bb4914fa312a6cc18af66d728f921ed714d610018006bf8df0b26f5d8fd799a2
+  Stored in directory: /tmp/pip-ephem-wheel-cache-_h6b34z8/wheels/2a/e0/29/39ac1e35dac6ce0559acfe3da7d20df523f8094bf80548f568
+  Building wheel for depth_camera_filtering (pyproject.toml): started
+  Building wheel for depth_camera_filtering (pyproject.toml): finished with status 'done'
+  Created wheel for depth_camera_filtering: filename=depth_camera_filtering-0.1-py3-none-any.whl size=4297 sha256=6b9c7c65747bf8a4814a8cd8cbe0c3ae85a2442f693ce2965896785d75f53d0d
+  Stored in directory: /tmp/pip-ephem-wheel-cache-_h6b34z8/wheels/f0/ec/b0/ebe3ea38014129c78828f056b52d0c5828f638545c7d053ad2
+  Building wheel for mobile_sam (pyproject.toml): started
+  Building wheel for mobile_sam (pyproject.toml): finished with status 'done'
+  Created wheel for mobile_sam: filename=mobile_sam-1.0-py3-none-any.whl size=42478 sha256=d5d9c1f1ee23d13693b2a2d1a7a9e297144dc50cb3ed6a4e9bd311d15da08726
+  Stored in directory: /tmp/pip-ephem-wheel-cache-_h6b34z8/wheels/4e/a4/af/28d77875e885487bcd9d920c26de4a36688a9ffbc691e0c462
+Successfully built frontier_exploration depth_camera_filtering mobile_sam
+Installing collected packages: mobile_sam, frontier_exploration, depth_camera_filtering
+
+Successfully installed depth_camera_filtering-0.1 frontier_exploration-0.1 mobile_sam-1.0

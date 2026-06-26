@@ -1,0 +1,14 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+In 'habitat_baselines/rl/policy/vlfm_policy': ValidationError raised while composing config:
+Invalid type assigned: str is not a subclass of PolicyConfig. value: HabitatITMPolicy
+    full_key: habitat_baselines.rl.policy.name
+    reference_type=Dict[str, PolicyConfig]
+    object_type=dict
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Could not import groundingdino. This is OK if you are only using the client.
+Could not import lavis. This is OK if you are only using the client.
+Could not import yolov7. This is OK if you are only using the client.
+Could not import lavis. This is OK if you are only using the client.

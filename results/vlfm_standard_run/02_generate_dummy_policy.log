@@ -1,0 +1,8 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Could not import groundingdino. This is OK if you are only using the client.
+Could not import lavis. This is OK if you are only using the client.
+Could not import yolov7. This is OK if you are only using the client.
+Could not import lavis. This is OK if you are only using the client.
+Dummy policy weights saved to data/dummy_policy.pth

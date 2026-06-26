@@ -1,0 +1,39 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorboard
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9c/d9/a5db55f88f258ac669a92858b70a714bbbd5acd993820b41ec4a96a4d77f/tensorboard-2.20.0-py3-none-any.whl (5.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 17.5 MB/s  0:00:00
+Collecting absl-py>=0.4 (from tensorboard)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8f/aa/ba0014cc4659328dc818a28827be78e6d97312ab0cb98105a770924dc11e/absl_py-2.3.1-py3-none-any.whl (135 kB)
+Collecting grpcio>=1.48.2 (from tensorboard)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/54/b1/50fdb826acafd5ac661e10df25b089721172530f2eb4aa1f36bd3c3d4254/grpcio-1.80.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (6.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 MB 80.4 MB/s  0:00:00
+Collecting markdown>=2.6.8 (from tensorboard)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/70/ae/44c4a6a4cbb496d93c6257954260fe3a6e91b7bed2240e5dad2a717f5111/markdown-3.9-py3-none-any.whl (107 kB)
+Requirement already satisfied: numpy>=1.12.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (1.26.4)
+Requirement already satisfied: packaging in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (26.2)
+Requirement already satisfied: pillow in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (11.3.0)
+Collecting protobuf!=4.24.0,>=3.19.6 (from tensorboard)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/16/92/d1e32e3e0d894fe00b15ce28ad4944ab692713f2e7f0a99787405e43533a/protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Requirement already satisfied: setuptools>=41.0.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (82.0.1)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/73/c6/825dab04195756cf8ff2e12698f22513b3db2f64925bdd41671bfb33aaa5/tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl (6.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 76.5 MB/s  0:00:00
+Collecting werkzeug>=1.0.1 (from tensorboard)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/93/8c/2e650f2afeb7ee576912636c23ddb621c91ac6a98e66dc8d29c3c69446e1/werkzeug-3.1.8-py3-none-any.whl (226 kB)
+Requirement already satisfied: typing-extensions~=4.12 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from grpcio>=1.48.2->tensorboard) (4.14.1)
+Requirement already satisfied: importlib-metadata>=4.4 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from markdown>=2.6.8->tensorboard) (8.7.0)
+Requirement already satisfied: zipp>=3.20 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard) (3.23.0)
+Requirement already satisfied: markupsafe>=2.1.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from werkzeug>=1.0.1->tensorboard) (3.0.3)
+Installing collected packages: werkzeug, tensorboard-data-server, protobuf, grpcio, absl-py, markdown, tensorboard
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+habitat-baselines 0.3.320250127 requires faster_fifo>=1.4.2, which is not installed.
+habitat-baselines 0.3.320250127 requires ifcfg, which is not installed.
+habitat-baselines 0.3.320250127 requires lmdb>=0.98, which is not installed.
+habitat-baselines 0.3.320250127 requires moviepy>=1.0.1, which is not installed.
+habitat-baselines 0.3.320250127 requires threadpoolctl>=3.1.0, which is not installed.
+habitat-baselines 0.3.320250127 requires webdataset==0.1.40, which is not installed.
+Successfully installed absl-py-2.3.1 grpcio-1.80.0 markdown-3.9 protobuf-6.33.6 tensorboard-2.20.0 tensorboard-data-server-0.7.2 werkzeug-3.1.8
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip

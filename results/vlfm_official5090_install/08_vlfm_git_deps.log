@@ -1,0 +1,36 @@
+Collecting git+https://github.com/naokiyokoyama/depth_camera_filtering.git
+  Cloning https://github.com/naokiyokoyama/depth_camera_filtering.git to /tmp/pip-req-build-8q1029sw
+  Running command git clone --filter=blob:none --quiet https://github.com/naokiyokoyama/depth_camera_filtering.git /tmp/pip-req-build-8q1029sw
+  Resolved https://github.com/naokiyokoyama/depth_camera_filtering.git to commit 39d6e2f391c8b2198a67ad96f94bf6da0acd48a0
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting git+https://github.com/ChaoningZhang/MobileSAM.git
+  Cloning https://github.com/ChaoningZhang/MobileSAM.git to /tmp/pip-req-build-pskxv5zx
+  Running command git clone --filter=blob:none --quiet https://github.com/ChaoningZhang/MobileSAM.git /tmp/pip-req-build-pskxv5zx
+  Resolved https://github.com/ChaoningZhang/MobileSAM.git to commit f706ad9c4eb7f219c00d9050e46328518ffb65d2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: depth_camera_filtering, mobile_sam
+  Building wheel for depth_camera_filtering (pyproject.toml): started
+  Building wheel for depth_camera_filtering (pyproject.toml): finished with status 'done'
+  Created wheel for depth_camera_filtering: filename=depth_camera_filtering-0.1-py3-none-any.whl size=4297 sha256=17a44f5ee2c9ae69bd96a1fe94b1b81dee81dda3aa63bd6ac8026b5133601a1b
+  Stored in directory: /tmp/pip-ephem-wheel-cache-bmumejd1/wheels/f0/ec/b0/ebe3ea38014129c78828f056b52d0c5828f638545c7d053ad2
+  Building wheel for mobile_sam (pyproject.toml): started
+  Building wheel for mobile_sam (pyproject.toml): finished with status 'done'
+  Created wheel for mobile_sam: filename=mobile_sam-1.0-py3-none-any.whl size=42478 sha256=375ec3991d8a7deed3fae34613877f047baaa32b6932c8620f0ee1941ad0c09c
+  Stored in directory: /tmp/pip-ephem-wheel-cache-bmumejd1/wheels/4e/a4/af/28d77875e885487bcd9d920c26de4a36688a9ffbc691e0c462
+Successfully built depth_camera_filtering mobile_sam
+Installing collected packages: mobile_sam, depth_camera_filtering
+
+Successfully installed depth_camera_filtering-0.1 mobile_sam-1.0
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip

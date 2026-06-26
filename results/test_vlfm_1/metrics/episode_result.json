@@ -1,0 +1,18 @@
+{
+  "distance_to_goal": 0.020099664106965065,
+  "success": 1.0,
+  "spl": 0.6219336988302482,
+  "soft_spl": 0.6164373523596796,
+  "distance_to_goal_reward": 0.0,
+  "traveled_stairs": 0.0,
+  "yaw": 120.00000333930423,
+  "target_detected": 1.0,
+  "stop_called": 1.0,
+  "start_yaw": -2.4036881923675537,
+  "average_reward": 4.6762590408325195,
+  "num_finished_episodes": 1,
+  "number_of_eval_episodes": 1,
+  "evals_per_ep": 1,
+  "total_elapsed_sec": 39.936108112335205,
+  "closed_time": "2026-06-25 21:23:18"
+}

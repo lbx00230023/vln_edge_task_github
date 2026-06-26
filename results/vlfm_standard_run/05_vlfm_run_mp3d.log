@@ -1,0 +1,714 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Could not import groundingdino. This is OK if you are only using the client.
+Could not import lavis. This is OK if you are only using the client.
+Could not import yolov7. This is OK if you are only using the client.
+Could not import lavis. This is OK if you are only using the client.
+2026-06-25 15:25:58,619 env config: habitat_baselines:
+  evaluate: true
+  trainer_name: vlfm
+  updater_name: PPO
+  distrib_updater_name: DDPPO
+  torch_gpu_id: 0
+  tensorboard_dir: tb
+  writer_type: tb
+  video_dir: video_dir
+  video_fps: 10
+  test_episode_count: -1
+  eval_ckpt_path_dir: data/dummy_policy.pth
+  num_environments: 1
+  num_processes: -1
+  rollout_storage_name: RolloutStorage
+  checkpoint_folder: data/new_checkpoints
+  num_updates: 270000
+  num_checkpoints: 100
+  checkpoint_interval: -1
+  total_num_steps: -1.0
+  log_interval: 10
+  log_file: train.log
+  force_blind_policy: false
+  verbose: true
+  eval_keys_to_include_in_name: []
+  force_torch_single_threaded: true
+  wb:
+    project_name: ''
+    entity: ''
+    group: ''
+    run_name: ''
+  load_resume_state_config: false
+  eval:
+    split: val
+    use_ckpt_config: true
+    should_load_ckpt: true
+    evals_per_ep: 1
+    video_option: []
+    extra_sim_sensors: {}
+  profiling:
+    capture_start_step: -1
+    num_steps_to_capture: -1
+  rl:
+    agent:
+      type: SingleAgentAccessMgr
+    preemption:
+      append_slurm_job_id: false
+      save_resume_state_interval: 100
+      save_state_batch_only: false
+    policy:
+      name: HabitatITMPolicyV2
+      action_distribution_type: categorical
+      action_dist:
+        use_log_std: true
+        use_softplus: false
+        std_init: ???
+        log_std_init: 0.0
+        use_std_param: false
+        clamp_std: true
+        min_std: 1.0e-06
+        max_std: 1
+        min_log_std: -5
+        max_log_std: 2
+        action_activation: tanh
+        scheduled_std: false
+      obs_transforms: {}
+      hierarchical_policy: ???
+      text_prompt: Seems like there is a target_object ahead.
+      pointnav_policy_path: data/pointnav_weights.pth
+      depth_image_shape:
+      - 224
+      - 224
+      pointnav_stop_radius: 0.9
+      use_max_confidence: false
+      object_map_erosion_size: 5
+      exploration_thresh: 0.0
+      obstacle_map_area_threshold: 1.5
+      min_obstacle_height: 0.61
+      max_obstacle_height: 0.88
+      hole_area_thresh: 100000
+      use_vqa: false
+      vqa_prompt: 'Is this '
+      coco_threshold: 0.8
+      non_coco_threshold: 0.4
+      agent_radius: 0.18
+    ppo:
+      clip_param: 0.2
+      ppo_epoch: 4
+      num_mini_batch: 2
+      value_loss_coef: 0.5
+      entropy_coef: 0.01
+      lr: 0.00025
+      eps: 1.0e-05
+      max_grad_norm: 0.2
+      num_steps: 64
+      use_gae: true
+      use_linear_lr_decay: false
+      use_linear_clip_decay: false
+      gamma: 0.99
+      tau: 0.95
+      reward_window_size: 50
+      use_normalized_advantage: false
+      hidden_size: 512
+      entropy_target_factor: 0.0
+      use_adaptive_entropy_pen: false
+      use_clipped_value_loss: true
+      use_double_buffered_sampler: false
+    ddppo:
+      sync_frac: 0.6
+      distrib_backend: NCCL
+      rnn_type: LSTM
+      num_recurrent_layers: 2
+      backbone: resnet50
+      pretrained_weights: data/ddppo-models/gibson-2plus-resnet50.pth
+      pretrained: false
+      pretrained_encoder: false
+      train_encoder: true
+      reset_critic: false
+      force_distributed: false
+    ver:
+      variable_experience: true
+      num_inference_workers: 2
+      overlap_rollouts_and_learn: false
+    auxiliary_losses: {}
+habitat:
+  seed: 100
+  env_task: GymHabitatEnv
+  env_task_gym_dependencies: []
+  env_task_gym_id: ''
+  environment:
+    max_episode_steps: 500
+    max_episode_seconds: 10000000
+    iterator_options:
+      cycle: true
+      shuffle: true
+      group_by_scene: true
+      num_episode_sample: -1
+      max_scene_repeat_episodes: -1
+      max_scene_repeat_steps: 50000
+      step_repetition_range: 0.2
+  simulator:
+    type: Sim-v0
+    action_space_config: v1
+    action_space_config_arguments: {}
+    forward_step_size: 0.25
+    create_renderer: false
+    requires_textures: true
+    auto_sleep: false
+    step_physics: true
+    concur_render: false
+    needs_markers: true
+    update_articulated_agent: true
+    scene: data/scene_datasets/habitat-test-scenes/van-gogh-room.glb
+    scene_dataset: default
+    additional_object_paths: []
+    seed: ${habitat.seed}
+    turn_angle: 30
+    tilt_angle: 30
+    default_agent_id: 0
+    debug_render: false
+    debug_render_articulated_agent: false
+    kinematic_mode: false
+    debug_render_goal: true
+    robot_joint_start_noise: 0.0
+    ctrl_freq: 120.0
+    ac_freq_ratio: 4
+    load_objs: true
+    hold_thresh: 0.15
+    grasp_impulse: 10000.0
+    agents:
+      main_agent:
+        height: 0.88
+        radius: 0.18
+        grasp_managers: 1
+        sim_sensors:
+          rgb_sensor:
+            type: HabitatSimRGBSensor
+            height: 480
+            width: 640
+            position:
+            - 0.0
+            - 0.88
+            - 0.0
+            orientation:
+            - 0.0
+            - 0.0
+            - 0.0
+            hfov: 79
+            sensor_subtype: PINHOLE
+            noise_model: None
+            noise_model_kwargs: {}
+          depth_sensor:
+            type: HabitatSimDepthSensor
+            height: 480
+            width: 640
+            position:
+            - 0.0
+            - 0.88
+            - 0.0
+            orientation:
+            - 0.0
+            - 0.0
+            - 0.0
+            hfov: 79
+            sensor_subtype: PINHOLE
+            noise_model: None
+            noise_model_kwargs: {}
+            min_depth: 0.5
+            max_depth: 5.0
+            normalize_depth: true
+        is_set_start_state: false
+        start_position:
+        - 0.0
+        - 0.0
+        - 0.0
+        start_rotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        joint_start_noise: 0.1
+        articulated_agent_urdf: data/robots/hab_fetch/robots/hab_fetch.urdf
+        articulated_agent_type: FetchRobot
+        ik_arm_urdf: data/robots/hab_fetch/robots/fetch_onlyarm.urdf
+        motion_data_path: ''
+    agents_order:
+    - main_agent
+    habitat_sim_v0:
+      gpu_device_id: 0
+      gpu_gpu: false
+      allow_sliding: false
+      frustum_culling: true
+      enable_physics: false
+      physics_config_file: ./data/default.physics_config.json
+      leave_context_with_background_renderer: false
+      enable_gfx_replay_save: false
+    ep_info: null
+    object_ids_start: 100
+  task:
+    reward_measure: distance_to_goal_reward
+    success_measure: spl
+    success_reward: 2.5
+    slack_reward: -0.001
+    end_on_success: true
+    type: ObjectNav-v1
+    lab_sensors:
+      objectgoal_sensor:
+        type: ObjectGoalSensor
+        goal_spec: TASK_CATEGORY_ID
+        goal_spec_max_val: 50
+      compass_sensor:
+        type: CompassSensor
+      gps_sensor:
+        type: GPSSensor
+        dimensionality: 2
+      base_explorer:
+        type: BaseExplorer
+        ang_vel: 10.0
+        area_thresh: 3.0
+        forward_step_size: 0.25
+        fov: 79
+        lin_vel: 0.25
+        map_resolution: 256
+        minimize_time: true
+        success_distance: 0.18
+        turn_angle: 30.0
+        visibility_dist: 4.5
+      heading_sensor:
+        type: HeadingSensor
+      frontier_sensor:
+        type: FrontierSensor
+    measurements:
+      distance_to_goal:
+        type: DistanceToGoal
+        distance_to: VIEW_POINTS
+      success:
+        type: Success
+        success_distance: 0.1
+      spl:
+        type: SPL
+      soft_spl:
+        type: SoftSPL
+      distance_to_goal_reward:
+        type: DistanceToGoalReward
+      frontier_exploration_map:
+        type: FrontierExplorationMap
+        max_episode_steps: 1000
+        map_padding: 3
+        map_resolution: 1024
+        draw_source: true
+        draw_border: true
+        draw_shortest_path: true
+        draw_view_points: true
+        draw_goal_positions: true
+        draw_goal_aabbs: true
+        fog_of_war:
+          draw: true
+          visibility_dist: 5.0
+          fov: 90
+        draw_waypoints: true
+      traveled_stairs:
+        type: TraveledStairs
+    goal_sensor_uuid: objectgoal
+    count_obj_collisions: true
+    settle_steps: 5
+    constraint_violation_ends_episode: true
+    constraint_violation_drops_object: false
+    force_regenerate: false
+    should_save_to_cache: false
+    object_in_hand_sample_prob: 0.167
+    min_start_distance: 3.0
+    render_target: true
+    physics_stability_steps: 1
+    num_spawn_attempts: 200
+    spawn_max_dist_to_obj: 2.0
+    base_angle_noise: 0.523599
+    ee_sample_factor: 0.2
+    ee_exclude_region: 0.0
+    base_noise: 0.05
+    spawn_region_scale: 0.2
+    joint_max_impulse: -1.0
+    desired_resting_position:
+    - 0.5
+    - 0.0
+    - 1.0
+    use_marker_t: true
+    cache_robot_init: false
+    success_state: 0.0
+    should_enforce_target_within_reach: false
+    task_spec_base_path: habitat/task/rearrange/pddl/
+    task_spec: ''
+    pddl_domain_def: replica_cad
+    obj_succ_thresh: 0.3
+    enable_safe_drop: false
+    art_succ_thresh: 0.15
+    robot_at_thresh: 2.0
+    filter_nav_to_tasks: []
+    actions:
+      stop:
+        type: StopAction
+        agent_index: 0
+      move_forward:
+        type: MoveForwardAction
+        agent_index: 0
+      turn_left:
+        type: TurnLeftAction
+        agent_index: 0
+      turn_right:
+        type: TurnRightAction
+        agent_index: 0
+      look_up:
+        type: LookUpAction
+        agent_index: 0
+      look_down:
+        type: LookDownAction
+        agent_index: 0
+  dataset:
+    type: ObjectNav-v1
+    split: val
+    scenes_dir: data/scene_datasets
+    content_scenes:
+    - '*'
+    data_path: data/datasets/objectnav/mp3d/val/val.json.gz
+  gym:
+    obs_keys: null
+    action_keys: null
+    achieved_goal_keys: []
+    desired_goal_keys: []
+
+2026-06-25 15:25:58,619 Initializing dataset ObjectNav-v1
+0
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+2026-06-25 15:26:00,968 Initializing dataset ObjectNav-v1
+2026-06-25 15:26:03,110 initializing sim Sim-v0
+[15:26:03:119577]:[Metadata] AttributesManagerBase.h(380)::createFromJsonOrDefaultInternal : <Dataset>: Proposing JSON name : default.scene_dataset_config.json from original name : default| This file does not exist.
+[15:26:03:119621]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (capsule3DSolid:capsule3DSolid_hemiRings_4_cylRings_1_segments_12_halfLen_0.75_useTexCoords_false_useTangents_false) created and registered.
+[15:26:03:119635]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (capsule3DWireframe:capsule3DWireframe_hemiRings_8_cylRings_1_segments_16_halfLen_1) created and registered.
+[15:26:03:119645]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (coneSolid:coneSolid_segments_12_halfLen_1.25_rings_1_useTexCoords_false_useTangents_false_capEnd_true) created and registered.
+[15:26:03:119652]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (coneWireframe:coneWireframe_segments_32_halfLen_1.25) created and registered.
+[15:26:03:119659]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (cubeSolid:cubeSolid) created and registered.
+[15:26:03:119664]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (cubeWireframe:cubeWireframe) created and registered.
+[15:26:03:119672]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (cylinderSolid:cylinderSolid_rings_1_segments_12_halfLen_1_useTexCoords_false_useTangents_false_capEnds_true) created and registered.
+[15:26:03:119678]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (cylinderWireframe:cylinderWireframe_rings_1_segments_32_halfLen_1) created and registered.
+[15:26:03:119684]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (icosphereSolid:icosphereSolid_subdivs_1) created and registered.
+[15:26:03:119690]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (icosphereWireframe:icosphereWireframe_subdivs_1) created and registered.
+[15:26:03:119696]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (uvSphereSolid:uvSphereSolid_rings_8_segments_16_useTexCoords_false_useTangents_false) created and registered.
+[15:26:03:119702]:[Metadata] AssetAttributesManager.cpp(123)::createObject : Asset attributes (uvSphereWireframe:uvSphereWireframe_rings_16_segments_32) created and registered.
+[15:26:03:119705]:[Metadata] AssetAttributesManager.cpp(112)::AssetAttributesManager : Built default primitive asset templates : 12
+[15:26:03:119801]:[Metadata] SceneDatasetAttributesManager.cpp(37)::createObject : File (default) not found, so new default dataset attributes created  and registered.
+[15:26:03:119804]:[Metadata] MetadataMediator.cpp(120)::createSceneDataset : Dataset default successfully created.
+[15:26:03:119811]:[Metadata] AttributesManagerBase.h(380)::createFromJsonOrDefaultInternal : <Physics Manager>: Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json| This file does not exist.
+[15:26:03:119816]:[Metadata] PhysicsAttributesManager.cpp(26)::createObject : File (./data/default.physics_config.json) not found, so new default physics manager attributes created and registered.
+[15:26:03:119819]:[Metadata] MetadataMediator.cpp(203)::setActiveSceneDatasetName : Previous active dataset  changed to default successfully.
+[15:26:03:119821]:[Metadata] MetadataMediator.cpp(175)::setCurrPhysicsAttributesHandle : Old physics manager attributes  changed to ./data/default.physics_config.json successfully.
+[15:26:03:119824]:[Metadata] MetadataMediator.cpp(66)::setSimulatorConfiguration : Set new simulator config for scene/stage : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb and dataset : default which is currently active dataset.
+Renderer: NVIDIA GeForce RTX 5090 D v2/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 590.48.01
+Using optional features:
+    GL_ARB_vertex_array_object
+    GL_ARB_separate_shader_objects
+    GL_ARB_robustness
+    GL_ARB_texture_storage
+    GL_ARB_texture_view
+    GL_ARB_framebuffer_no_attachments
+    GL_ARB_invalidate_subdata
+    GL_ARB_texture_storage_multisample
+    GL_ARB_multi_bind
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_texture_filter_anisotropic
+    GL_KHR_debug
+    GL_KHR_parallel_shader_compile
+    GL_NV_depth_buffer_float
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+[15:26:03:348719]:[Metadata] MetadataMediator.cpp(297)::getSceneInstanceAttributesByName : Dataset : default has no preloaded SceneInstanceAttributes or StageAttributes named : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb so loading/creating a new StageAttributes with this name, and then creating a SceneInstanceAttributes with the same name that references this stage.
+[15:26:03:348733]:[Metadata] AttributesManagerBase.h(380)::createFromJsonOrDefaultInternal : <Stage Template>: Proposing JSON name : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.stage_config.json from original name : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb| This file does not exist.
+[15:26:03:348761]:[Metadata] AbstractObjectAttributesManagerBase.h(184)::createObject : File (data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb) exists but is not a recognized config filename extension, so new default Stage Template attributes created and registered.
+[15:26:03:348780]:[Metadata] SceneDatasetAttributes.cpp(47)::addNewSceneInstanceToDataset : Dataset : 'default' : Stage Attributes 'data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb' specified in Scene Attributes exists in dataset library.
+[15:26:03:348783]:[Metadata] SceneDatasetAttributes.cpp(84)::addNewSceneInstanceToDataset : Dataset : 'default' : Lighting Layout Attributes 'no_lights' specified in Scene Attributes but does not exist in dataset, so creating.
+[15:26:03:348790]:[Metadata] AttributesManagerBase.h(380)::createFromJsonOrDefaultInternal : <Lighting Layout>: Proposing JSON name : no_lights.lighting_config.json from original name : no_lights| This file does not exist.
+[15:26:03:348797]:[Metadata] LightLayoutAttributesManager.cpp(38)::createObject : File (no_lights) not found, so new default light layout attributes created and registered.
+[15:26:03:348801]:[Sim] Simulator.cpp(235)::createSceneInstance : Navmesh file location in scene instance : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.navmesh
+[15:26:03:348807]:[Sim] Simulator.cpp(240)::createSceneInstance : Loading navmesh from data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.navmesh
+[15:26:03:348815]:[Nav] PathFinder.cpp(1035)::loadNavMesh : NavMeshSettings aren't present, guessing that they are the default
+[15:26:03:348941]:[Sim] Simulator.cpp(242)::createSceneInstance : Navmesh Loaded.
+[15:26:03:348950]:[Scene] SceneGraph.h(85)::createDrawableGroup : Created DrawableGroup: 
+[15:26:03:348953]:[Assets] ResourceManager.cpp(308)::loadSemanticSceneDescriptor : SceneInstance : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb proposed Semantic Scene Descriptor filename : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.house
+[15:26:03:387993]:[Assets] ResourceManager.cpp(319)::loadSemanticSceneDescriptor : SSD with SceneInstanceAttributes-provided name  data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.house successfully found and loaded
+[15:26:03:388021]:[Assets] ResourceManager.cpp(1666)::configureImporterManagerGLExtensions : Importing Basis files as BC7.
+[15:26:03:388276]:[Sim] Simulator.cpp(309)::createSceneInstance : Using scene instance-specified Light key : - no_lights -
+[15:26:03:388282]:[Metadata] MetadataMediator.cpp(66)::setSimulatorConfiguration : Set new simulator config for scene/stage : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb and dataset : default which is currently active dataset.
+[15:26:03:388299]:[Sim] Simulator.cpp(419)::instanceStageForSceneAttributes : Start to load stage named : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb with render asset : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb and collision asset : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb
+[15:26:03:388320]:[Assets] ResourceManager.cpp(702)::createStageAssetInfosFromAttributes : Frame :{"up":[0,0,1],"front":[0,1,0],"origin":[0,0,0]} for render mesh named : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb|{"up":[0,0,1],"front":[0,1,0],"origin":[0,0,0]} for semantic mesh named : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw_semantic.ply with type specified as semantic|Semantic Txtrs : False
+[15:26:03:388327]:[Assets] ResourceManager.cpp(442)::loadStage : Loading Semantic Stage mesh : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw_semantic.ply
+[15:26:03:388330]:[Scene] SceneGraph.h(85)::createDrawableGroup : Created DrawableGroup: 
+[15:26:03:388334]:[Assets] ResourceManager.cpp(984)::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw_semantic.ply 
+[15:26:03:388337]:[Assets] ResourceManager.cpp(863)::loadRenderAsset : Loading Semantic Mesh asset named: data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw_semantic.ply
+[15:26:03:388339]:[Assets] ResourceManager.cpp(1666)::configureImporterManagerGLExtensions : Importing Basis files as BC7.
+[15:26:05:453650]:[Assets] ResourceManager.cpp(475)::loadStage : Semantic Stage mesh : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw_semantic.ply loaded.
+[15:26:05:453671]:[Assets] ResourceManager.cpp(518)::loadStage : Start load render asset data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb .
+[15:26:05:453675]:[Assets] ResourceManager.cpp(984)::loadStageInternal : Attempting to load stage data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb 
+[15:26:05:453685]:[Assets] ResourceManager.cpp(866)::loadRenderAsset : Loading general asset named: data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb
+[15:26:05:453691]:[Assets] ResourceManager.cpp(1666)::configureImporterManagerGLExtensions : Importing Basis files as BC7.
+[15:26:08:646913]:[Assets] ResourceManager.cpp(2105)::loadMaterials : Building 175 materials for asset named 'Z6MFQCViBuw.glb' : 
+[15:26:08:646977]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 00:Flat.
+[15:26:08:646987]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 01:Flat.
+[15:26:08:646993]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 02:Flat.
+[15:26:08:646998]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 03:Flat.
+[15:26:08:647003]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 04:Flat.
+[15:26:08:647008]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 05:Flat.
+[15:26:08:647013]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 06:Flat.
+[15:26:08:647018]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 07:Flat.
+[15:26:08:647023]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 08:Flat.
+[15:26:08:647028]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 09:Flat.
+[15:26:08:647033]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 10:Flat.
+[15:26:08:647039]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 11:Flat.
+[15:26:08:647044]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 12:Flat.
+[15:26:08:647048]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 13:Flat.
+[15:26:08:647053]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 14:Flat.
+[15:26:08:647058]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 15:Flat.
+[15:26:08:647063]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 16:Flat.
+[15:26:08:647068]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 17:Flat.
+[15:26:08:647072]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 18:Flat.
+[15:26:08:647077]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 19:Flat.
+[15:26:08:647082]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 20:Flat.
+[15:26:08:647087]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 21:Flat.
+[15:26:08:647092]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 22:Flat.
+[15:26:08:647097]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 23:Flat.
+[15:26:08:647102]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 24:Flat.
+[15:26:08:647107]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 25:Flat.
+[15:26:08:647111]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 26:Flat.
+[15:26:08:647116]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 27:Flat.
+[15:26:08:647121]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 28:Flat.
+[15:26:08:647126]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 29:Flat.
+[15:26:08:647131]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 30:Flat.
+[15:26:08:647135]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 31:Flat.
+[15:26:08:647141]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 32:Flat.
+[15:26:08:647146]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 33:Flat.
+[15:26:08:647150]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 34:Flat.
+[15:26:08:647155]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 35:Flat.
+[15:26:08:647160]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 36:Flat.
+[15:26:08:647165]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 37:Flat.
+[15:26:08:647170]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 38:Flat.
+[15:26:08:647174]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 39:Flat.
+[15:26:08:647180]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 40:Flat.
+[15:26:08:647184]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 41:Flat.
+[15:26:08:647190]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 42:Flat.
+[15:26:08:647194]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 43:Flat.
+[15:26:08:647199]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 44:Flat.
+[15:26:08:647203]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 45:Flat.
+[15:26:08:647208]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 46:Flat.
+[15:26:08:647213]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 47:Flat.
+[15:26:08:647217]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 48:Flat.
+[15:26:08:647222]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 49:Flat.
+[15:26:08:647227]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 50:Flat.
+[15:26:08:647231]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 51:Flat.
+[15:26:08:647236]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 52:Flat.
+[15:26:08:647240]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 53:Flat.
+[15:26:08:647245]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 54:Flat.
+[15:26:08:647250]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 55:Flat.
+[15:26:08:647255]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 56:Flat.
+[15:26:08:647260]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 57:Flat.
+[15:26:08:647265]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 58:Flat.
+[15:26:08:647270]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 59:Flat.
+[15:26:08:647275]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 60:Flat.
+[15:26:08:647280]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 61:Flat.
+[15:26:08:647284]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 62:Flat.
+[15:26:08:647289]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 63:Flat.
+[15:26:08:647295]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 64:Flat.
+[15:26:08:647299]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 65:Flat.
+[15:26:08:647304]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 66:Flat.
+[15:26:08:647309]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 67:Flat.
+[15:26:08:647314]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 68:Flat.
+[15:26:08:647319]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 69:Flat.
+[15:26:08:647323]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 70:Flat.
+[15:26:08:647328]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 71:Flat.
+[15:26:08:647333]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 72:Flat.
+[15:26:08:647338]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 73:Flat.
+[15:26:08:647342]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 74:Flat.
+[15:26:08:647347]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 75:Flat.
+[15:26:08:647352]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 76:Flat.
+[15:26:08:647356]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 77:Flat.
+[15:26:08:647361]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 78:Flat.
+[15:26:08:647366]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 79:Flat.
+[15:26:08:647371]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 80:Flat.
+[15:26:08:647375]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 81:Flat.
+[15:26:08:647381]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 82:Flat.
+[15:26:08:647386]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 83:Flat.
+[15:26:08:647391]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 84:Flat.
+[15:26:08:647395]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 85:Flat.
+[15:26:08:647400]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 86:Flat.
+[15:26:08:647404]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 87:Flat.
+[15:26:08:647409]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 88:Flat.
+[15:26:08:647414]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 89:Flat.
+[15:26:08:647418]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 90:Flat.
+[15:26:08:647423]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 91:Flat.
+[15:26:08:647428]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 92:Flat.
+[15:26:08:647432]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 93:Flat.
+[15:26:08:647437]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 94:Flat.
+[15:26:08:647441]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 95:Flat.
+[15:26:08:647447]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 96:Flat.
+[15:26:08:647451]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 97:Flat.
+[15:26:08:647456]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 98:Flat.
+[15:26:08:647460]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 99:Flat.
+[15:26:08:647465]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 100:Flat.
+[15:26:08:647470]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 101:Flat.
+[15:26:08:647475]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 102:Flat.
+[15:26:08:647480]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 103:Flat.
+[15:26:08:647485]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 104:Flat.
+[15:26:08:647489]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 105:Flat.
+[15:26:08:647496]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 106:Flat.
+[15:26:08:647501]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 107:Flat.
+[15:26:08:647506]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 108:Flat.
+[15:26:08:647510]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 109:Flat.
+[15:26:08:647514]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 110:Flat.
+[15:26:08:647519]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 111:Flat.
+[15:26:08:647524]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 112:Flat.
+[15:26:08:647528]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 113:Flat.
+[15:26:08:647533]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 114:Flat.
+[15:26:08:647537]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 115:Flat.
+[15:26:08:647542]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 116:Flat.
+[15:26:08:647546]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 117:Flat.
+[15:26:08:647551]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 118:Flat.
+[15:26:08:647555]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 119:Flat.
+[15:26:08:647560]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 120:Flat.
+[15:26:08:647564]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 121:Flat.
+[15:26:08:647570]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 122:Flat.
+[15:26:08:647574]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 123:Flat.
+[15:26:08:647579]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 124:Flat.
+[15:26:08:647585]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 125:Flat.
+[15:26:08:647589]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 126:Flat.
+[15:26:08:647594]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 127:Flat.
+[15:26:08:647600]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 128:Flat.
+[15:26:08:647604]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 129:Flat.
+[15:26:08:647609]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 130:Flat.
+[15:26:08:647613]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 131:Flat.
+[15:26:08:647618]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 132:Flat.
+[15:26:08:647622]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 133:Flat.
+[15:26:08:647627]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 134:Flat.
+[15:26:08:647631]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 135:Flat.
+[15:26:08:647636]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 136:Flat.
+[15:26:08:647640]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 137:Flat.
+[15:26:08:647644]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 138:Flat.
+[15:26:08:647649]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 139:Flat.
+[15:26:08:647654]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 140:Flat.
+[15:26:08:647658]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 141:Flat.
+[15:26:08:647663]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 142:Flat.
+[15:26:08:647667]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 143:Flat.
+[15:26:08:647673]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 144:Flat.
+[15:26:08:647677]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 145:Flat.
+[15:26:08:647682]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 146:Flat.
+[15:26:08:647686]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 147:Flat.
+[15:26:08:647690]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 148:Flat.
+[15:26:08:647695]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 149:Flat.
+[15:26:08:647700]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 150:Flat.
+[15:26:08:647704]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 151:Flat.
+[15:26:08:647709]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 152:Flat.
+[15:26:08:647715]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 153:Flat.
+[15:26:08:647719]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 154:Flat.
+[15:26:08:647723]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 155:Flat.
+[15:26:08:647728]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 156:Flat.
+[15:26:08:647732]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 157:Flat.
+[15:26:08:647737]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 158:Flat.
+[15:26:08:647741]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 159:Flat.
+[15:26:08:647746]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 160:Flat.
+[15:26:08:647750]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 161:Flat.
+[15:26:08:647755]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 162:Flat.
+[15:26:08:647759]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 163:Flat.
+[15:26:08:647764]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 164:Flat.
+[15:26:08:647768]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 165:Flat.
+[15:26:08:647773]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 166:Flat.
+[15:26:08:647777]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 167:Flat.
+[15:26:08:647782]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 168:Flat.
+[15:26:08:647786]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 169:Flat.
+[15:26:08:647791]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 170:Flat.
+[15:26:08:647795]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 171:Flat.
+[15:26:08:647800]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 172:Flat.
+[15:26:08:647804]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 173:Flat.
+[15:26:08:647808]:[Assets] ResourceManager.cpp(2210)::loadMaterials : Idx 174:Flat.
+[15:26:08:818067]:[Sim] Simulator.cpp(446)::instanceStageForSceneAttributes : Successfully loaded stage named : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb
+[15:26:08:818125]:[Sim] Simulator.cpp(203)::reconfigure : CreateSceneInstance success == true for active scene name : data/scene_datasets/mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb  with renderer.
+[15:26:08:825237]:[Nav] PathFinder.cpp(571)::build : Building navmesh with 861 x 569 cells
+[15:26:08:981978]:[Nav] PathFinder.cpp(845)::build : Created navmesh with 1272 vertices 658 polygons
+[15:26:08:982047]:[Sim] Simulator.cpp(908)::recomputeNavMesh : reconstruct navmesh successful
+2026-06-25 15:26:08,983 Initializing task ObjectNav-v1
+Error executing job with overrides: ['habitat.dataset.data_path=data/datasets/objectnav/mp3d/val/val.json.gz']
+Traceback (most recent call last):
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/nd/vln_edge_task/external/vlfm/vlfm/run.py", line 59, in <module>
+    main()
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 132, in run
+    _ = ret.return_value
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/hydra/core/utils.py", line 260, in return_value
+    raise self._return_value
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/home/nd/vln_edge_task/external/vlfm/vlfm/run.py", line 55, in main
+    execute_exp(cfg, "eval" if cfg.habitat_baselines.evaluate else "train")
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat_baselines/run.py", line 62, in execute_exp
+    trainer.eval()
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat_baselines/common/base_trainer.py", line 132, in eval
+    self._eval_checkpoint(
+  File "/home/nd/vln_edge_task/external/vlfm/vlfm/utils/vlfm_trainer.py", line 101, in _eval_checkpoint
+    self._agent = self._create_agent(None)
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat_baselines/rl/ppo/ppo_trainer.py", line 125, in _create_agent
+    return baseline_registry.get_agent_access_mgr(
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat_baselines/rl/ppo/single_agent_access_mgr.py", line 67, in __init__
+    self._init_policy_and_updater(lr_schedule_fn, resume_state)
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat_baselines/rl/ppo/single_agent_access_mgr.py", line 70, in _init_policy_and_updater
+    self._actor_critic = self._create_policy()
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat_baselines/rl/ppo/single_agent_access_mgr.py", line 140, in _create_policy
+    actor_critic = policy.from_config(
+  File "/home/nd/vln_edge_task/external/vlfm/vlfm/policy/habitat_policies.py", line 119, in from_config
+    return cls(**kwargs)
+  File "/home/nd/vln_edge_task/external/vlfm/vlfm/policy/habitat_policies.py", line 85, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/nd/vln_edge_task/external/vlfm/vlfm/policy/itm_policy.py", line 47, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/nd/vln_edge_task/external/vlfm/vlfm/policy/base_objectnav_policy.py", line 70, in __init__
+    self._pointnav_policy = WrappedPointNavResNetPolicy(pointnav_policy_path)
+  File "/home/nd/vln_edge_task/external/vlfm/vlfm/policy/utils/pointnav_policy.py", line 65, in __init__
+    self.policy = load_pointnav_policy(ckpt_path)
+  File "/home/nd/vln_edge_task/external/vlfm/vlfm/policy/utils/pointnav_policy.py", line 174, in load_pointnav_policy
+    ckpt_dict = torch.load(file_path, map_location="cpu")
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/torch/serialization.py", line 1529, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL omegaconf.dictconfig.DictConfig was not an allowed global by default. Please use `torch.serialization.add_safe_globals([omegaconf.dictconfig.DictConfig])` or the `torch.serialization.safe_globals([omegaconf.dictconfig.DictConfig])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+Exception ignored in: <function VectorEnv.__del__ at 0x7bb730c2c4c0>
+Traceback (most recent call last):
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat/core/vector_env.py", line 589, in __del__
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat/core/vector_env.py", line 460, in close
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat/core/vector_env.py", line 129, in __call__
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/site-packages/habitat/utils/pickle5_multiprocessing.py", line 63, in send
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/multiprocessing/connection.py", line 200, in send_bytes
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
+  File "/home/nd/vln_edge_task/envs/vlfm_standard/lib/python3.9/multiprocessing/connection.py", line 368, in _send
+BrokenPipeError: [Errno 32] Broken pipe

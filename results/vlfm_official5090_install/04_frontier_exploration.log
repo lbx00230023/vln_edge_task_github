@@ -1,0 +1,23 @@
+Collecting git+https://github.com/naokiyokoyama/frontier_exploration.git
+  Cloning https://github.com/naokiyokoyama/frontier_exploration.git to /tmp/pip-req-build-alqu8v4m
+  Running command git clone --filter=blob:none --quiet https://github.com/naokiyokoyama/frontier_exploration.git /tmp/pip-req-build-alqu8v4m
+  Resolved https://github.com/naokiyokoyama/frontier_exploration.git to commit 8523aa857e4b81d15e14a506fe94a77d5f2e7d5d
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: frontier_exploration
+  Building wheel for frontier_exploration (pyproject.toml): started
+  Building wheel for frontier_exploration (pyproject.toml): finished with status 'done'
+  Created wheel for frontier_exploration: filename=frontier_exploration-0.1-py3-none-any.whl size=31200 sha256=97546c409ec23b3e91bbd511af7778f5407ba632e975e6f71b71152253b46683
+  Stored in directory: /tmp/pip-ephem-wheel-cache-1iuscxm4/wheels/22/09/3f/e905773be39cfdb4065a350d22cf5fb8f66163496484f48b98
+Successfully built frontier_exploration
+Installing collected packages: frontier_exploration
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+vlfm 0.1 requires depth_camera_filtering @ git+https://github.com/naokiyokoyama/depth_camera_filtering, which is not installed.
+vlfm 0.1 requires mobile_sam @ git+https://github.com/ChaoningZhang/MobileSAM.git, which is not installed.
+vlfm 0.1 requires torch==1.12.1, but you have torch 2.12.1 which is incompatible.
+vlfm 0.1 requires torchvision==0.13.1, but you have torchvision 0.27.1 which is incompatible.
+Successfully installed frontier_exploration-0.1

@@ -1,0 +1,48 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: tensorboard in ./envs/vlfm_official5090/lib/python3.9/site-packages (2.20.0)
+Collecting faster-fifo>=1.4.2
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/22/18/ddede14890b54b6431aa150aa264c2f03afebf1ed1ecba91596ea30e6f47/faster_fifo-1.5.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (388 kB)
+Collecting ifcfg
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d8/35/d5d8da34881946022e311693a875e2d162045f20ea17d7d33707ab929eb8/ifcfg-0.24-py2.py3-none-any.whl (10 kB)
+Collecting lmdb>=0.98
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ea/ec/896d66ed062b75b9e8a06fe9516a182d105d79a0e30cea01546ff218453e/lmdb-2.2.1-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (326 kB)
+Collecting moviepy>=1.0.1
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9a/73/7d3b2010baa0b5eb1e4dfa9e4385e89b6716be76f2fa21a6c0fe34b68e5a/moviepy-2.2.1-py3-none-any.whl (129 kB)
+Collecting threadpoolctl>=3.1.0
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/32/d5/f9a850d79b0851d1d4ef6456097579a9005b31fea68726a4ae5f2d82ddd9/threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Collecting webdataset>=0.1.40
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8e/84/cf2319c375f4e061f27354685295905dc81105d2a2d2239baaf6f6e73c87/webdataset-0.2.100-py3-none-any.whl (74 kB)
+Requirement already satisfied: absl-py>=0.4 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (2.3.1)
+Requirement already satisfied: grpcio>=1.48.2 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (1.80.0)
+Requirement already satisfied: markdown>=2.6.8 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (3.9)
+Requirement already satisfied: numpy>=1.12.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (1.26.4)
+Requirement already satisfied: packaging in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (26.2)
+Requirement already satisfied: pillow in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (11.3.0)
+Requirement already satisfied: protobuf!=4.24.0,>=3.19.6 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (6.33.6)
+Requirement already satisfied: setuptools>=41.0.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (82.0.1)
+Requirement already satisfied: tensorboard-data-server<0.8.0,>=0.7.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (0.7.2)
+Requirement already satisfied: werkzeug>=1.0.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from tensorboard) (3.1.8)
+Collecting decorator<6.0,>=4.0.2 (from moviepy>=1.0.1)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/05/7f/798705f5296a58ca505d600456748d1be48078eac8a7050d8a98bc9edb89/decorator-5.3.1-py3-none-any.whl (10 kB)
+Requirement already satisfied: imageio<3.0,>=2.5 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from moviepy>=1.0.1) (2.37.0)
+Requirement already satisfied: imageio_ffmpeg>=0.2.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from moviepy>=1.0.1) (0.6.0)
+Collecting proglog<=1.0.0 (from moviepy>=1.0.1)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c1/1b/f7ea6cde25621cd9236541c66ff018f4268012a534ec31032bcb187dc5e7/proglog-0.1.12-py3-none-any.whl (6.3 kB)
+Collecting python-dotenv>=0.10 (from moviepy>=1.0.1)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/14/1b/a298b06749107c305e1fe0f814c6c74aea7b2f1e10989cb30f544a1b3253/python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+Requirement already satisfied: tqdm in ./envs/vlfm_official5090/lib/python3.9/site-packages (from proglog<=1.0.0->moviepy>=1.0.1) (4.67.1)
+Collecting braceexpand (from webdataset>=0.1.40)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fa/93/e8c04e80e82391a6e51f218ca49720f64236bc824e92152a2633b74cf7ab/braceexpand-0.1.7-py2.py3-none-any.whl (5.9 kB)
+Requirement already satisfied: pyyaml in ./envs/vlfm_official5090/lib/python3.9/site-packages (from webdataset>=0.1.40) (6.0.2)
+Requirement already satisfied: typing-extensions~=4.12 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from grpcio>=1.48.2->tensorboard) (4.14.1)
+Requirement already satisfied: importlib-metadata>=4.4 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from markdown>=2.6.8->tensorboard) (8.7.0)
+Requirement already satisfied: zipp>=3.20 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard) (3.23.0)
+Requirement already satisfied: markupsafe>=2.1.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from werkzeug>=1.0.1->tensorboard) (3.0.3)
+Installing collected packages: ifcfg, braceexpand, webdataset, threadpoolctl, python-dotenv, proglog, lmdb, faster-fifo, decorator, moviepy
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+habitat-baselines 0.3.320250127 requires webdataset==0.1.40, but you have webdataset 0.2.100 which is incompatible.
+Successfully installed braceexpand-0.1.7 decorator-5.3.1 faster-fifo-1.5.2 ifcfg-0.24 lmdb-2.2.1 moviepy-2.2.1 proglog-0.1.12 python-dotenv-1.2.1 threadpoolctl-3.6.0 webdataset-0.2.100
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip

@@ -1,0 +1,118 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting scikit-learn
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/79/35/b1d2188967c3204c78fa79c9263668cf1b98060e8e58d1a730fe5b2317bb/scikit_learn-1.6.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 39.9 MB/s  0:00:00
+Collecting seaborn==0.12.2
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8f/2e/17bbb83fbf102687bb2aa3d808add39da820a7698159302a1a69bb82e01c/seaborn-0.12.2-py3-none-any.whl (293 kB)
+Collecting transformers==4.26.0
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b7/1a/ef470ac1ff879b823c718ddc08c5b33ab4e68100b565a7037f8bf3aa98de/transformers-4.26.0-py3-none-any.whl (6.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 77.1 MB/s  0:00:00
+Requirement already satisfied: timm==0.4.12 in ./envs/vlfm_official5090/lib/python3.9/site-packages (0.4.12)
+Collecting ftfy
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ab/6e/81d47999aebc1b155f81eca4477a616a70f238a2549848c38983f3c22a82/ftfy-6.3.1-py3-none-any.whl (44 kB)
+Collecting regex
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e7/74/1eb46bde30899825ed9fdf645eba16b7b97c49d12d300f5177989b9a09a4/regex-2026.1.15-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (791 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 791.3/791.3 kB 100.4 MB/s  0:00:00
+Collecting sentencepiece
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/32/d7/efd7e172875f1329d8ae43e55f853776e332542ecb881a11a6b67d49c98c/sentencepiece-0.2.1-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 87.5 MB/s  0:00:00
+Collecting einops
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2a/09/f8d8f8f31e4483c10a906437b4ce31bdf3d6d417b73fe33f1a8b59e34228/einops-0.8.2-py3-none-any.whl (65 kB)
+Requirement already satisfied: imageio in ./envs/vlfm_official5090/lib/python3.9/site-packages (2.37.0)
+Requirement already satisfied: imageio-ffmpeg in ./envs/vlfm_official5090/lib/python3.9/site-packages (0.6.0)
+Collecting psutil
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b5/70/5d8df3b09e25bce090399cf48e452d25c935ab72dad19406c77f4e828045/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Collecting tabulate
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl (35 kB)
+Collecting iopath
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/72/73/b3d451dfc523756cf177d3ebb0af76dc7751b341c60e2a21871be400ae29/iopath-0.1.10.tar.gz (42 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting yacs
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/38/4f/fe9a4d472aa867878ce3bb7efb16654c5d63672b86dc0e6e953a67018433/yacs-0.1.8-py3-none-any.whl (14 kB)
+Requirement already satisfied: numpy!=1.24.0,>=1.17 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from seaborn==0.12.2) (1.26.4)
+Requirement already satisfied: pandas>=0.25 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from seaborn==0.12.2) (2.3.1)
+Requirement already satisfied: matplotlib!=3.6.1,>=3.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from seaborn==0.12.2) (3.9.4)
+Requirement already satisfied: filelock in ./envs/vlfm_official5090/lib/python3.9/site-packages (from transformers==4.26.0) (3.19.1)
+Collecting huggingface-hub<1.0,>=0.11.0 (from transformers==4.26.0)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a8/af/48ac8483240de756d2438c380746e7130d1c6f75802ef22f3c6d49982787/huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 73.9 MB/s  0:00:00
+Requirement already satisfied: packaging>=20.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from transformers==4.26.0) (26.2)
+Requirement already satisfied: pyyaml>=5.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from transformers==4.26.0) (6.0.2)
+Requirement already satisfied: requests in ./envs/vlfm_official5090/lib/python3.9/site-packages (from transformers==4.26.0) (2.32.5)
+Collecting tokenizers!=0.11.3,<0.14,>=0.11.1 (from transformers==4.26.0)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d6/27/07a337087dd507170a1b20fed3bbf8da81401185a7130a6e74e440c52040/tokenizers-0.13.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (7.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.8/7.8 MB 76.0 MB/s  0:00:00
+Requirement already satisfied: tqdm>=4.27 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from transformers==4.26.0) (4.67.1)
+Requirement already satisfied: torch>=1.4 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from timm==0.4.12) (2.8.0+cu128)
+Requirement already satisfied: torchvision in ./envs/vlfm_official5090/lib/python3.9/site-packages (from timm==0.4.12) (0.23.0)
+Requirement already satisfied: fsspec>=2023.5.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from huggingface-hub<1.0,>=0.11.0->transformers==4.26.0) (2025.7.0)
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub<1.0,>=0.11.0->transformers==4.26.0)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/de/cc/f99f4bc7295023d7bd9ebbfd51f75cc530ca262c1227666268b8208f4b77/hf_xet-1.5.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 71.0 MB/s  0:00:00
+Requirement already satisfied: typing-extensions>=3.7.4.3 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from huggingface-hub<1.0,>=0.11.0->transformers==4.26.0) (4.14.1)
+Requirement already satisfied: scipy>=1.6.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from scikit-learn) (1.13.1)
+Collecting joblib>=1.2.0 (from scikit-learn)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl (309 kB)
+Requirement already satisfied: threadpoolctl>=3.1.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from scikit-learn) (3.6.0)
+Requirement already satisfied: wcwidth in ./envs/vlfm_official5090/lib/python3.9/site-packages (from ftfy) (0.8.1)
+Requirement already satisfied: pillow>=8.3.2 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from imageio) (11.3.0)
+Collecting portalocker (from iopath)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/4b/a6/38c8e2f318bf67d338f4d629e93b0b4b9af331f455f0390ea8ce4a099b26/portalocker-3.2.0-py3-none-any.whl (22 kB)
+Requirement already satisfied: contourpy>=1.0.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from matplotlib!=3.6.1,>=3.1->seaborn==0.12.2) (1.3.0)
+Requirement already satisfied: cycler>=0.10 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from matplotlib!=3.6.1,>=3.1->seaborn==0.12.2) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from matplotlib!=3.6.1,>=3.1->seaborn==0.12.2) (4.59.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from matplotlib!=3.6.1,>=3.1->seaborn==0.12.2) (1.4.7)
+Requirement already satisfied: pyparsing>=2.3.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from matplotlib!=3.6.1,>=3.1->seaborn==0.12.2) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from matplotlib!=3.6.1,>=3.1->seaborn==0.12.2) (2.9.0.post0)
+Requirement already satisfied: importlib-resources>=3.2.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from matplotlib!=3.6.1,>=3.1->seaborn==0.12.2) (6.5.2)
+Requirement already satisfied: zipp>=3.1.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from importlib-resources>=3.2.0->matplotlib!=3.6.1,>=3.1->seaborn==0.12.2) (3.23.0)
+Requirement already satisfied: pytz>=2020.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from pandas>=0.25->seaborn==0.12.2) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from pandas>=0.25->seaborn==0.12.2) (2025.2)
+Requirement already satisfied: six>=1.5 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from python-dateutil>=2.7->matplotlib!=3.6.1,>=3.1->seaborn==0.12.2) (1.17.0)
+Requirement already satisfied: sympy>=1.13.3 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (1.14.0)
+Requirement already satisfied: networkx in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (3.2.1)
+Requirement already satisfied: jinja2 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (3.1.6)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (12.8.90)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (9.10.2.21)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (0.7.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.27.3 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (2.27.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (1.13.1.3)
+Requirement already satisfied: triton==3.4.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from torch>=1.4->timm==0.4.12) (3.4.0)
+Requirement already satisfied: setuptools>=40.8.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from triton==3.4.0->torch>=1.4->timm==0.4.12) (82.0.1)
+Requirement already satisfied: importlib-metadata in ./envs/vlfm_official5090/lib/python3.9/site-packages (from triton==3.4.0->torch>=1.4->timm==0.4.12) (8.7.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from sympy>=1.13.3->torch>=1.4->timm==0.4.12) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from jinja2->torch>=1.4->timm==0.4.12) (3.0.3)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from requests->transformers==4.26.0) (3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from requests->transformers==4.26.0) (3.18)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from requests->transformers==4.26.0) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in ./envs/vlfm_official5090/lib/python3.9/site-packages (from requests->transformers==4.26.0) (2025.8.3)
+Building wheels for collected packages: iopath
+  Building wheel for iopath (pyproject.toml): started
+  Building wheel for iopath (pyproject.toml): finished with status 'done'
+  Created wheel for iopath: filename=iopath-0.1.10-py3-none-any.whl size=31596 sha256=2a681ec72502252ef6c8c7026532dc19c6c6a396349f7fe28eef7b2dd0de13bc
+  Stored in directory: /home/nd/.cache/pip/wheels/f4/3e/63/740e10c38713762725480e69ebfc832fe12a8bef6f3b380249
+Successfully built iopath
+Installing collected packages: tokenizers, yacs, tabulate, sentencepiece, regex, psutil, portalocker, joblib, hf-xet, ftfy, einops, scikit-learn, iopath, huggingface-hub, transformers, seaborn
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+vlfm 0.1 requires opencv-python==4.5.5.64, but you have opencv-python 4.11.0 which is incompatible.
+vlfm 0.1 requires torch==1.12.1, but you have torch 2.8.0+cu128 which is incompatible.
+vlfm 0.1 requires torchvision==0.13.1, but you have torchvision 0.23.0 which is incompatible.
+Successfully installed einops-0.8.2 ftfy-6.3.1 hf-xet-1.5.1 huggingface-hub-0.36.2 iopath-0.1.10 joblib-1.5.3 portalocker-3.2.0 psutil-7.2.2 regex-2026.1.15 scikit-learn-1.6.1 seaborn-0.12.2 sentencepiece-0.2.1 tabulate-0.9.0 tokenizers-0.13.3 transformers-4.26.0 yacs-0.1.8
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip

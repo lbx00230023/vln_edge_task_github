@@ -1,0 +1,10 @@
+Python 3.9.23
+/home/nd/vln_edge_task/envs/vlfm_standard/bin/python
+/home/nd/vln_edge_task/envs/vlfm_standard
+numpy: 1.26.4
+torch: 2.8.0+cu128
+cuda: True
+gpu: NVIDIA GeForce RTX 5090 D v2
+habitat ok
+habitat_sim ok
+habitat_baselines ok

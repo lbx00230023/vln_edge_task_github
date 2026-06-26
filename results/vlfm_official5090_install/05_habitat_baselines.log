@@ -1,0 +1,8 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting habitat-baselines==0.3.320250127
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/bc/9c/d3e349239cad1b05a7d24abac8b5b25ddca34cdd513a004079f6761fb240/habitat_baselines-0.3.320250127-py3-none-any.whl (224 kB)
+Installing collected packages: habitat-baselines
+Successfully installed habitat-baselines-0.3.320250127
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip

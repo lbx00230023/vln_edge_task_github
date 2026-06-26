@@ -1,0 +1,40 @@
+===== Dataset summary =====
+val dir:        /home/nd/vln_edge_task/external/vlfm/data/datasets/objectnav/mp3d/val
+scene files:    11
+total episodes: 2195
+
+===== Top scenes =====
+8194nk5LbLH      episodes= 201 targets=(chair:63, gym_equipment:35, stool:28, counter:14, table:14, plant:14, cabinet:11, picture:7)
+oLBMNvg9in8      episodes= 201 targets=(picture:65, chair:31, table:23, fireplace:21, cabinet:20, cushion:11, bed:8, sofa:5)
+2azQ1b91cZZ      episodes= 200 targets=(chair:38, cabinet:35, table:25, cushion:21, counter:12, picture:10, plant:8, sink:7)
+TbHJrupSAjP      episodes= 200 targets=(chair:37, cushion:35, cabinet:19, table:17, plant:15, picture:12, stool:11, sink:9)
+X7HyMhZNoso      episodes= 200 targets=(cushion:56, chair:33, shower:14, table:14, cabinet:12, sink:12, plant:12, chest_of_drawers:9)
+Z6MFQCViBuw      episodes= 200 targets=(chair:105, table:43, chest_of_drawers:14, cabinet:12, picture:9, sofa:7, stool:3, fireplace:3)
+pLe4wQe7qrG      episodes= 200 targets=(table:114, seating:57, shower:29)
+x8F5xyUWy9e      episodes= 200 targets=(chair:36, towel:32, sink:27, cabinet:23, plant:18, table:18, seating:14, shower:9)
+EU6Fwq7SyZv      episodes= 198 targets=(cushion:45, chair:45, table:26, picture:16, cabinet:10, chest_of_drawers:10, stool:10, bed:6)
+zsNo4HB9uLZ      episodes= 198 targets=(cushion:66, picture:23, cabinet:16, table:16, sink:9, counter:9, bed:7, chest_of_drawers:7)
+QUCTc6BB5sX      episodes= 197 targets=(chair:40, table:30, cabinet:22, picture:16, towel:11, sink:11, chest_of_drawers:10, stool:8)
+
+===== Top target categories =====
+chair                    434
+table                    340
+cushion                  239
+cabinet                  180
+picture                  161
+plant                    87
+seating                  87
+sink                     82
+towel                    73
+shower                   70
+stool                    68
+counter                  66
+chest_of_drawers         63
+sofa                     53
+bed                      48
+gym_equipment            44
+fireplace                30
+toilet                   28
+clothes                  25
+bathtub                  9
+tv_monitor               8

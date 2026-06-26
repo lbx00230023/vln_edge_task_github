@@ -1,0 +1,56 @@
+2026年 06月 24日 星期三 23:27:19 CST
+===== ENV =====
+/home/nd/vln_edge_task/envs/vlfm
+Python 3.9.23
+/home/nd/vln_edge_task/envs/vlfm/bin/python
+===== VLFM README command check =====
+49:pip install -e .[habitat]
+53:pip install -e .[reality]
+108:./scripts/launch_vlm_servers.sh
+115:python -m vlfm.run
+119:python -m vlfm.run habitat.dataset.data_path=data/datasets/objectnav/mp3d/val/val.json.gz
+===== VLFM files check =====
+config
+data
+docker
+docs
+LICENSE
+pyproject.toml
+README.md
+scripts
+setup.py
+test
+vlfm
+eval_dummy_policy.sh
+eval_itm_policy.sh
+eval_oracle_fbe_policy.sh
+launch_vlm_servers.sh
+parse_jsons.py
+__init__.py
+mapping
+measurements
+obs_transformers
+policy
+reality
+run.py
+semexp_env
+utils
+vlm
+===== Python import check =====
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+PluginManager::Manager: duplicate static plugin StbImageImporter, ignoring
+PluginManager::Manager: duplicate static plugin GltfImporter, ignoring
+PluginManager::Manager: duplicate static plugin BasisImporter, ignoring
+PluginManager::Manager: duplicate static plugin AssimpImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnySceneImporter, ignoring
+PluginManager::Manager: duplicate static plugin AnyImageImporter, ignoring
+[OK] habitat
+[OK] habitat_sim
+[OK] vlfm
+[FAIL] vlfm.run: ModuleNotFoundError: No module named 'frontier_exploration'
+[FAIL] torch: ModuleNotFoundError: No module named 'torch'
+[OK] hydra
+[OK] omegaconf
+[FAIL] habitat_baselines: ModuleNotFoundError: No module named 'habitat_baselines'

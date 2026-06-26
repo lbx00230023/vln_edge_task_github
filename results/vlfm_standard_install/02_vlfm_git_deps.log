@@ -1,0 +1,12 @@
+Collecting git+https://github.com/naokiyokoyama/frontier_exploration.git
+  Cloning https://github.com/naokiyokoyama/frontier_exploration.git to /tmp/pip-req-build-l7glvpp8
+  Running command git clone --filter=blob:none --quiet https://github.com/naokiyokoyama/frontier_exploration.git /tmp/pip-req-build-l7glvpp8
+  致命错误：无法访问 'https://github.com/naokiyokoyama/frontier_exploration.git/'：Failed to connect to github.com:443 after 134511 ms: Could not connect to server
+  error: subprocess-exited-with-error
+  
+  × git clone --filter=blob:none --quiet https://github.com/naokiyokoyama/frontier_exploration.git /tmp/pip-req-build-l7glvpp8 did not run successfully.
+  │ exit code: 128
+  ╰─> No available output.
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'git+https://github.com/naokiyokoyama/frontier_exploration.git' when git clone --filter=blob:none --quiet https://github.com/naokiyokoyama/frontier_exploration.git /tmp/pip-req-build-l7glvpp8

@@ -1,0 +1,11 @@
+{
+  "result_dir": "/home/nd/vln_edge_task/results/test_vlfm_1",
+  "live": true,
+  "save_every": 5,
+  "window_name": "test_vlfm_1_live",
+  "panel_cell_size": [
+    480,
+    270
+  ],
+  "created_time": "2026-06-25 21:22:38"
+}

@@ -1,0 +1,14 @@
+{
+  "experiment": "test_vlfm_1",
+  "src_val_dir": "/home/nd/vln_edge_task/external/vlfm/data/datasets/objectnav/mp3d/val",
+  "dst_val_dir": "/home/nd/vln_edge_task/results/test_vlfm_1/configs/objectnav_one_episode/val",
+  "dst_val_json": "/home/nd/vln_edge_task/results/test_vlfm_1/configs/objectnav_one_episode/val/val.json.gz",
+  "dst_content_json": "/home/nd/vln_edge_task/results/test_vlfm_1/configs/objectnav_one_episode/val/content/Z6MFQCViBuw.json.gz",
+  "selected_scene": "Z6MFQCViBuw",
+  "selected_target": "chair",
+  "selected_episode_id": "0",
+  "matched_episode_count": 105,
+  "episode_index": 0,
+  "scene_id_raw": "mp3d/Z6MFQCViBuw/Z6MFQCViBuw.glb",
+  "object_category": "chair"
+}
