@@ -1,0 +1,13 @@
+vlfm_trainer.py
+    torch.load / checkpoint 的 weights_only=False 兼容补丁；
+    曾加入过 test_vlfm_1 recorder 逻辑，虽然当前主流程改用官方 video，但这个修改记录仍然重要。
+
+pointnav_policy.py
+    PyTorch 2.8 加载旧 PointNav checkpoint 的 weights_only=False 补丁。
+
+yolov7/models/experimental.py
+    PyTorch 2.8 加载 YOLOv7 checkpoint 的 weights_only=False 补丁。
+
+GroundingDINO/.../ms_deform_attn_cuda.cu
+    PyTorch 2.8 / CUDA 12.8 兼容补丁：
+    value.type() → value.scalar_type()
